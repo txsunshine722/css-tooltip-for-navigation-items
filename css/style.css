@@ -9,18 +9,66 @@ nav {
     padding: 10px 20px;
 }
 
-nav a {
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
     color: white;
     text-decoration: none;
-    margin-right: 20px;
     display: flex;
     align-items: center;
     gap: 5px;
     font-weight: bold;
+    position: relative;
+    padding: 6px 4px;
+    border-radius: 6px;
+}
+
+.nav-link::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 8px);
+    transform: translateX(-50%) translateY(-4px);
+    background-color: #ffffff;
+    color: #222;
+    border: 1px solid #d9d9d9;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    white-space: nowrap;
+    line-height: 1.2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 140ms ease, transform 140ms ease;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-link:focus-visible {
+    outline: 2px solid #ffcc00;
+    outline-offset: 3px;
 
 }
 
-
-nav a:hover {
+.nav-link:hover {
     color: #ffcc00;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nav-link::after,
+    .nav-link::before {
+        transition: none;
+    }
 }

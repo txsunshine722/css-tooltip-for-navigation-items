@@ -4,16 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nav item UI tooltip</title>
-    <link rel="styelsheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
 </head>
 <body>
     <header>
         <nav>
-            <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
-            <li><a href="#"><i class="fas fa-info-circle"></i>About</a></li>
-            <li><a href="#"><i class="fas fa-envelope"></i>Contact</a></li>
+            <ul class="nav-list">
+                <li>
+                    <a class="nav-link" href="#" data-tooltip="Go to Home" aria-label="Home">
+                        <i class="fas fa-home" aria-hidden="true"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#" data-tooltip="Learn more About us" aria-label="About">
+                        <i class="fas fa-info-circle" aria-hidden="true"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="#" data-tooltip="Send us a message" aria-label="Contact">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
         </nav>
     </header>
     
